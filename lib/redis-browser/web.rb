@@ -44,6 +44,8 @@ module RedisBrowser
 
     get '/key.json' do
       json browser.get(params[:key], params)
+    rescue => e
+      puts("#{params[:key]} -> #{e.message}")
     end
 
     delete '/key.json' do
